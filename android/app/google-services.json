@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "964988224568",
+    "project_id": "book-list-univ",
+    "storage_bucket": "book-list-univ.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964988224568:android:89b57bab699d4c7b5592cd",
+        "android_client_info": {
+          "package_name": "com.example.lanlan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964988224568-bo3f3bk67di8t8v04q2sfreb1k60r3ei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_98OpPUqNOmRu3r9BPSCNVwSb3OfToE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964988224568-bo3f3bk67di8t8v04q2sfreb1k60r3ei.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "964988224568-49oqaf32cpkk15istrqbsk8f4456439a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lanlan"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964988224568:android:c8bd9c7c1af46eac5592cd",
+        "android_client_info": {
+          "package_name": "com.example.todoapp_univ"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964988224568-bo3f3bk67di8t8v04q2sfreb1k60r3ei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_98OpPUqNOmRu3r9BPSCNVwSb3OfToE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964988224568-bo3f3bk67di8t8v04q2sfreb1k60r3ei.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "964988224568-49oqaf32cpkk15istrqbsk8f4456439a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lanlan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
