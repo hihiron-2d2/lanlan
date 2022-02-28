@@ -11,6 +11,7 @@ class AddFolderPage extends StatelessWidget {
       create: (_) => AddFolderModel(),
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFFFAD5A6),
           title: const Text("add new folder"),
         ),
         body: Center(
@@ -46,7 +47,12 @@ class AddFolderPage extends StatelessWidget {
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     }
-                  }, child: const Text('Add')),
+                  },
+                      child: const Text('Add'),
+                       style: ElevatedButton.styleFrom(
+                         primary: const Color(0xFFFAD5A6), //ボタンの背景色
+                    ),
+                  ),
                 ],),
             );
           }),

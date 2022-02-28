@@ -18,8 +18,13 @@ class FolderHomePage extends StatelessWidget {
       create: (_) => FolderListModel()..fetchFolderList(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("My Folder"),
-        ),
+          backgroundColor: const Color(0xFFFAD5A6),
+          title: const Text(
+            "My Folder",
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          )),
         body: SingleChildScrollView(
           child: Center(
             child: Consumer<FolderListModel>(builder: (context, model, child) { ///modelの後にこのコードが読まれる
@@ -70,22 +75,31 @@ class FolderHomePage extends StatelessWidget {
                       ),
                      ],
                    ),
-                   child: ListTile(
-                       title: Text(folder.title ?? 'no folder'),
-                     onTap: () {
-                       logger.info('push');
-                       Navigator.of(context).push(MaterialPageRoute(
-                           builder: (context){
-                             return const CardHomePage();}));
-                    },
-                  ),
+                   child: Card(
+                     child: ListTile(
+                         title: Text(
+                           folder.title ?? 'no folder',
+                           style: const TextStyle(
+                             fontSize: 18,
+                           ),
+                         ),
+                         leading: const Icon(Icons.folder),
+                         trailing: const Icon(Icons.menu),
+                       onTap: () {
+                         logger.info('push');
+                         Navigator.of(context).push(MaterialPageRoute(
+                             builder: (context){
+                               return CardHomePage( id: folder.id);},),);
+                       },
+                     ),
+                   ),
                 ),
               )
                   .toList();
               return ListView(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.all(25.0),
+                padding: const EdgeInsets.all(20.0),
                 children: widgets,
               );
             }),
@@ -112,7 +126,8 @@ class FolderHomePage extends StatelessWidget {
               }
             },
             tooltip: 'Increment',
-            child: const Icon(Icons.add),
+            backgroundColor: const Color(0xFFFAD5A6),
+            child: const Icon(Icons.create_new_folder),
           );
          }
         ),
