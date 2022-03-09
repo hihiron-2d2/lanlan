@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:lanlan/card/card_add_model.dart';
+import 'package:lanlan/card/card_home_model.dart';
 import 'package:provider/provider.dart';
 
 
+// ignore: must_be_immutable
 class AddCardPage extends StatelessWidget {
-  final String? id;
-  const AddCardPage({Key? key, required this.id}) : super(key: key);
+  String? id;
+  AddCardPage({Key? key,required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<AddCardModel>(
-      create: (_) => AddCardModel(),
+    return ChangeNotifierProvider<CardListModel>(
+      create: (_) => CardListModel(),
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(80),
@@ -19,7 +20,7 @@ class AddCardPage extends StatelessWidget {
             title: Container(
                 margin: const EdgeInsets.only(top:20, left:20),
                 child: const Text(
-                    "book list sample",
+                    "Add Card",
                       style: TextStyle(
                         fontSize: 25,
                    ),
@@ -27,14 +28,14 @@ class AddCardPage extends StatelessWidget {
           ),
         ),
         body: Center(
-          child: Consumer<AddCardModel>(builder: (context, model, child) {
+          child: Consumer<CardListModel>(builder: (context, model, child) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
                   TextField(
                     decoration: const InputDecoration(
-                      hintText: 'Front word',
+                      hintText: 'Front Word',
                     ),
                     onChanged: (text) {
                       //todo　取得したtextを使う
@@ -46,7 +47,7 @@ class AddCardPage extends StatelessWidget {
                   ),
                   TextField(
                     decoration: const InputDecoration(
-                      hintText: 'Back word',
+                      hintText: 'Back Word',
                     ),
                     onChanged: (text) {
                       //todo　取得したtextを使う
@@ -59,7 +60,7 @@ class AddCardPage extends StatelessWidget {
                   ElevatedButton(onPressed: () async {
                     //追加の処理
                     try {
-                      await model.addCard(id);
+                      await model.Add(id);
                       Navigator.of(context).pop(true);
                     } catch (e){
                       final snackBar = SnackBar(

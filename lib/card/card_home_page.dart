@@ -4,6 +4,7 @@ import 'package:lanlan/card/card_home_model.dart';
 import 'package:lanlan/domain/card.dart';
 import 'package:provider/provider.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:lanlan/main.dart';
 
 // ignore: must_be_immutable
 class CardHomePage extends StatelessWidget {
@@ -28,6 +29,8 @@ class CardHomePage extends StatelessWidget {
           child: Center(
             child: Consumer<CardListModel>(builder: (context, model, child) {
               final List<Flipcard>? card = model.flipcards;
+
+              card?.forEach((element) {logger.info(element.id); logger.info(element.frontWord); logger.info(element.backWord); });
 
               if (card == null) {
                 return const CircularProgressIndicator();
@@ -97,13 +100,13 @@ class CardHomePage extends StatelessWidget {
             }),
           ),
         ),
-        floatingActionButton: Consumer<CardListModel>(builder: (context, model, child) {
+        floatingActionButton: Consumer<CardListModel>(builder: (context, model, child,) {
           return FloatingActionButton(
             onPressed: () async {
               //画面遷移
               final bool? added = await Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AddCardPage(id: '',),
+                MaterialPageRoute(builder: (context) => AddCardPage(id: id),
                   fullscreenDialog: true,
                 ),
               );
