@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lanlan/card/card_home_model.dart';
 import 'package:provider/provider.dart';
 
-
 // ignore: must_be_immutable
 class AddCardPage extends StatelessWidget {
   String? id;

@@ -7,7 +7,7 @@ import 'package:lanlan/main.dart';
 
 
 class CardListModel extends ChangeNotifier{
-  List<Flipcard>? flipcards;
+  List<Flipcard>? flipcard;
 
   String? frontWord;
   String? backWord;
@@ -17,7 +17,7 @@ class CardListModel extends ChangeNotifier{
   void fetchCardList(String? id) async {
     final QuerySnapshot snapshot = await folderRef.doc(id).collection('flipcards').get();
 
-    final List<Flipcard>? flipcards = snapshot.docs.map((DocumentSnapshot document) {
+    final List<Flipcard>? flipcard = snapshot.docs.map((DocumentSnapshot document) {
       Map<String?, dynamic> data = document.data()! as Map<String?, dynamic>;
       final String? id = document.id;
       final String? frontWord = data['frontWord'];
@@ -25,7 +25,7 @@ class CardListModel extends ChangeNotifier{
       return Flipcard(id, frontWord, backWord);
     }).toList();
 
-    this.flipcards = flipcards;
+    this.flipcard = flipcard;
     notifyListeners();
   }
 
@@ -50,7 +50,7 @@ class CardListModel extends ChangeNotifier{
 
     await folderRef.doc(id).collection('flipcards').get().then((QuerySnapshot snapshot) {
       snapshot.docs.forEach((doc) {
-        logger.info('おっぱい');
+        logger.info('りんご');
         /// usersコレクションのドキュメントIDを取得する
         logger.info(doc.id);
         /// 取得したドキュメントIDのフィールド値nameの値を取得する
